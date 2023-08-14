@@ -182,6 +182,12 @@ Marker("Odbiór tutaj",
        .tint(.purple)
 ```
 
+
+
+![image-20230814082441832](image-20230814082441832.png)
+
+
+
 Oprócz Marker, SwiftUI wprowadza w iOS 17 także widok Annotation do wskazywania lokalizacji na mapie. Funkcjonuje on podobnie jak Marker, ale oferuje większą elastyczność w dostosowywaniu.
 
 Aby dodać adnotację, tworzysz widok Annotation w bloku map content. Oto przykładowy fragment kodu dla dodania prostej adnotacji:

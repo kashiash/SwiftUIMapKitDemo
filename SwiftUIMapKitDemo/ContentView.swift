@@ -23,7 +23,14 @@ struct ContentView: View {
     var body: some View {
         Map(position: $position)
         {
-            Marker("Pickup here", coordinate: .pickupLocation)
+//            Marker("Pickup here",
+//                            systemImage: "car.front.waves.up",
+//                            coordinate: .pickupLocation)
+//                            .tint(.purple)
+
+            Annotation("Odbiór", coordinate: .pickupLocation, anchor: .bottom) {
+                Image(systemName: "car.front.waves.up")
+            }
         }
                .onAppear {
 //                   position = .item(MKMapItem(placemark: .init(coordinate: .palacKultury)))
