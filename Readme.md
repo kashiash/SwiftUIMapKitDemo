@@ -215,7 +215,7 @@ Annotation("Odbiór", coordinate: .pickupLocation, anchor: .bottom) {
 
 To prowadzi do animowanej adnotacji, jak pokazano na ilustracji poniżej.
 
-Zmiana stylu mapy
+#### Zmiana stylu mapy
 
 Domyślnie widok mapy renderuje mapę w standardowym stylu. Jednakże, możesz zmienić styl, używając modyfikatora `mapStyle`:
 
@@ -234,6 +234,6 @@ Opcjonalnie, możesz również zmienić styl mapy na hybrydowy, tak jak to:
 .mapStyle(.hybrid)
 ```
 
-Podsumowanie
+#### Podsumowanie
 
 Ten samouczek omawia, jak pracować z mapami i adnotacjami w SwiftUI, używając frameworku MapKit. Najnowsza wersja SwiftUI oferuje dodatkowe interfejsy API i widoki, które pozwalają programistom dalsze dostosowanie widoku mapy. Na tym etapie powinieneś wiedzieć, jak osadzać mapę w swojej aplikacji i dodawać adnotacje, aby wyróżnić lokalizację na mapie.

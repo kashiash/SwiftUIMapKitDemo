@@ -14,13 +14,17 @@ import MapKit
 extension CLLocationCoordinate2D {
     static let palacKultury = CLLocationCoordinate2D(latitude: 52.2297, longitude: 21.0115)
     static let kaczeBagno = CLLocationCoordinate2D(latitude: 52.220306, longitude: 21.017890)
+    static let pickupLocation = CLLocationCoordinate2D(latitude: 52.250556, longitude: 21.012222)
 }
 
 struct ContentView: View {
     @State private var position: MapCameraPosition = .automatic
 
     var body: some View {
-           Map(position: $position)
+        Map(position: $position)
+        {
+            Marker("Pickup here", coordinate: .pickupLocation)
+        }
                .onAppear {
 //                   position = .item(MKMapItem(placemark: .init(coordinate: .palacKultury)))
 
@@ -48,6 +52,16 @@ struct ContentView: View {
                            }
                        }) {
                            Text("Kacze bagno")
+                       }
+                       .tint(.black)
+                       .buttonStyle(.borderedProminent)
+
+                       Button(action: {
+                           withAnimation {
+                               position = .item(MKMapItem(placemark: .init(coordinate: .pickupLocation)))
+                           }
+                       }) {
+                           Text("Pickup")
                        }
                        .tint(.black)
                        .buttonStyle(.borderedProminent)
