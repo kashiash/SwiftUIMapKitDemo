@@ -39,6 +39,7 @@ struct ContentView: View {
                 }
             }
         }
+        .mapStyle(.hybrid)
                .onAppear {
                    position = .camera(MapCamera(
                                       centerCoordinate: .palacKultury,

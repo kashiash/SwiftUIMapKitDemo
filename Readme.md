@@ -234,11 +234,17 @@ Map {
 
 To tworzy styl mapy oparty na obrazach satelitarnych. Poprzez określenie `realisticelevation`, widok mapy renderuje trójwymiarową mapę o realistycznym wyglądzie.
 
+![image-20230814082844989](image-20230814082844989.png)
+
 Opcjonalnie, możesz również zmienić styl mapy na hybrydowy, tak jak to:
 
 ```swift
 .mapStyle(.hybrid)
 ```
+
+
+
+![image-20230814083419715](image-20230814083419715.png)
 
 #### Podsumowanie
 
