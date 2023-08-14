@@ -23,18 +23,23 @@ struct ContentView: View {
     var body: some View {
         Map(position: $position)
         {
-//            Marker("Pickup here",
-//                            systemImage: "car.front.waves.up",
-//                            coordinate: .pickupLocation)
-//                            .tint(.purple)
 
             Annotation("Odbiór", coordinate: .pickupLocation, anchor: .bottom) {
-                Image(systemName: "car.front.waves.up")
+                ZStack {
+                    Circle()
+                        .foregroundStyle(.indigo.opacity(0.5))
+                        .frame(width: 80, height: 80)
+
+                    Image(systemName: "car.front.waves.up")
+                        .symbolEffect(.variableColor)
+                        .padding()
+                        .foregroundStyle(.white)
+                        .background(Color.indigo)
+                        .clipShape(Circle())
+                }
             }
         }
                .onAppear {
-//                   position = .item(MKMapItem(placemark: .init(coordinate: .palacKultury)))
-
                    position = .camera(MapCamera(
                                       centerCoordinate: .palacKultury,
                                       distance: 800,
