@@ -249,3 +249,37 @@ Opcjonalnie, możesz również zmienić styl mapy na hybrydowy, tak jak to:
 #### Podsumowanie
 
 Ten samouczek omawia, jak pracować z mapami i adnotacjami w SwiftUI, używając frameworku MapKit. Najnowsza wersja SwiftUI oferuje dodatkowe interfejsy API i widoki, które pozwalają programistom dalsze dostosowanie widoku mapy. Na tym etapie powinieneś wiedzieć, jak osadzać mapę w swojej aplikacji i dodawać adnotacje, aby wyróżnić lokalizację na mapie.
+
+
+
+#### notatki dodatkowe
+
+##### konwersja adresu na CLLocation
+```swift
+func getLocation(from address: String, completion: @escaping (_ location: CLLocationCoordinate2D?)-> Void) {
+    let geocoder = CLGeocoder()
+    geocoder.geocodeAddressString(address) { (placemarks, error) in
+        guard let placemarks = placemarks,
+        let location = placemarks.first?.location?.coordinate else {
+            completion(nil)
+            return
+        }
+        completion(location)
+    }
+}
+```
+
+Adres przekonwetujemy
+
+```swift
+let address = "Springfield, Illinois"
+
+
+getLocation(from: address) { location in
+    print("Location is", location.debugDescription)
+    // Location is Optional(__C.CLLocationCoordinate2D(latitude: 39.799372, longitude: -89.644458))
+
+}
+```
+
+
